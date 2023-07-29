@@ -11,7 +11,7 @@ struct RSSListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \RSSFeedItem.sortValue, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \RSSFeedItem.url?.absoluteString, ascending: true)],
         animation: .default)
     private var items: FetchedResults<RSSFeedItem>
     
@@ -20,7 +20,7 @@ struct RSSListView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.url!.absoluteString!)")
+                        RSSListDetailView(feedItem: item)
                     } label: {
                         if item.url?.absoluteString != nil {
                             Text(item.url!.absoluteString!)

@@ -18,6 +18,8 @@
 		38B97E602A753D5C0056B094 /* URLToStringValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E5F2A753D5C0056B094 /* URLToStringValueTransformer.swift */; };
 		38B97E622A7545EF0056B094 /* FeedEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E612A7545EF0056B094 /* FeedEditorView.swift */; };
 		38B97E6A2A754A470056B094 /* RSSListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E692A754A470056B094 /* RSSListModel.swift */; };
+		38B97E6C2A7552540056B094 /* RSSListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E6B2A7552540056B094 /* RSSListDetailView.swift */; };
+		38B97E6E2A755DAC0056B094 /* TextFieldContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E6D2A755DAC0056B094 /* TextFieldContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		38B97E5F2A753D5C0056B094 /* URLToStringValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLToStringValueTransformer.swift; sourceTree = "<group>"; };
 		38B97E612A7545EF0056B094 /* FeedEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEditorView.swift; sourceTree = "<group>"; };
 		38B97E692A754A470056B094 /* RSSListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSListModel.swift; sourceTree = "<group>"; };
+		38B97E6B2A7552540056B094 /* RSSListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSListDetailView.swift; sourceTree = "<group>"; };
+		38B97E6D2A755DAC0056B094 /* TextFieldContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				38B97E452A753A3A0056B094 /* ContentView.swift */,
 				38B97E612A7545EF0056B094 /* FeedEditorView.swift */,
 				38B97E682A754A3D0056B094 /* RSSList */,
+				38B97E6B2A7552540056B094 /* RSSListDetailView.swift */,
+				38B97E6D2A755DAC0056B094 /* TextFieldContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,7 +205,9 @@
 			files = (
 				38B97E4D2A753A3B0056B094 /* Persistence.swift in Sources */,
 				38B97E602A753D5C0056B094 /* URLToStringValueTransformer.swift in Sources */,
+				38B97E6C2A7552540056B094 /* RSSListDetailView.swift in Sources */,
 				38B97E6A2A754A470056B094 /* RSSListModel.swift in Sources */,
+				38B97E6E2A755DAC0056B094 /* TextFieldContainerView.swift in Sources */,
 				38B97E5C2A753BE50056B094 /* RSSListView.swift in Sources */,
 				38B97E462A753A3A0056B094 /* ContentView.swift in Sources */,
 				38B97E442A753A3A0056B094 /* NewspaperssApp.swift in Sources */,
