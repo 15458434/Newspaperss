@@ -11,7 +11,7 @@ import CoreData
 struct ContentView: View {
     var body: some View {
         TabView() {
-            FeedListView()
+            FeedListView(feedListModel: FeedListModel(managedObjectContext: PersistenceController.shared.container.newBackgroundContext()))
                 .tabItem {
                     Label("News Feed", systemImage: "newspaper")
                 }

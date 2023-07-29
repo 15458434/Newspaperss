@@ -49,6 +49,7 @@ struct FeedSourceListView: View {
         withAnimation {
             let newItem = RSSFeedItem(context: viewContext)
             newItem.url = NSURL(string: "https://www.nu.nl/rss/Algemeen")
+            newItem.sortValue = Double(items.count)
 
             do {
                 try viewContext.save()

@@ -84,4 +84,10 @@
     }
 }
 
+#pragma mark - NSObject
+
+- (NSComparisonResult)compare:(RSSFeedItemObject *)other {
+    return [self.publicationDate compare:other.publicationDate];
+}
+
 @end

@@ -28,6 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *postId;
 @property (nonatomic, strong) XMLElement *content;
 
+#pragma mark - NSObject
+
+- (NSComparisonResult)compare:(RSSFeedItemObject *)other;
+
 @end
 
 NS_ASSUME_NONNULL_END
