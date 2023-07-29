@@ -30,7 +30,7 @@ struct FeedListView: View {
 }
 
 struct FeedListView_Previews: PreviewProvider {
-    static let persistence = PersistenceController(inMemory: true)
+    static let persistence = PersistenceController.preview
     
     static var previews: some View {
         FeedListView(feedListModel: FeedListModel(managedObjectContext: persistence.container.newBackgroundContext()))

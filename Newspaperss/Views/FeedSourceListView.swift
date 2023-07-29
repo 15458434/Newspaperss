@@ -78,13 +78,6 @@ struct FeedSourceListView: View {
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct FeedSourceListView_Previews: PreviewProvider {
     static var previews: some View {
         FeedSourceListView()

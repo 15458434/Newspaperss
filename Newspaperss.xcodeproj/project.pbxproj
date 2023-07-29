@@ -130,7 +130,6 @@
 			children = (
 				38B97E6F2A7560690056B094 /* RSSFeed */,
 				38B97E5E2A753D410056B094 /* Persistence */,
-				38B97E8D2A7589E20056B094 /* RSSFeedNetworkOperation.swift */,
 			);
 			path = Engines;
 			sourceTree = "<group>";
@@ -147,10 +146,11 @@
 		38B97E6F2A7560690056B094 /* RSSFeed */ = {
 			isa = PBXGroup;
 			children = (
-				38B97E732A7560B80056B094 /* RSSFeedChannelObject.h */,
-				38B97E782A7560B80056B094 /* RSSFeedChannelObject.m */,
+				38B97E8D2A7589E20056B094 /* RSSFeedNetworkOperation.swift */,
 				38B97E7C2A7560B80056B094 /* RSSFeedEngine.h */,
 				38B97E7A2A7560B80056B094 /* RSSFeedEngine.m */,
+				38B97E732A7560B80056B094 /* RSSFeedChannelObject.h */,
+				38B97E782A7560B80056B094 /* RSSFeedChannelObject.m */,
 				38B97E7B2A7560B80056B094 /* RSSFeedImageObject.h */,
 				38B97E752A7560B80056B094 /* RSSFeedImageObject.m */,
 				38B97E772A7560B80056B094 /* RSSFeedItemObject.h */,
