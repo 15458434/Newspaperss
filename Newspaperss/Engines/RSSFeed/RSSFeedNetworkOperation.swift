@@ -65,5 +65,6 @@ final class RSSFeedNetworkOperation: Operation {
     
     override func cancel() {
         bag.removeAll()
+        super.cancel()
     }
 }
