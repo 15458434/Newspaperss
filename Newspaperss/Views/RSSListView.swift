@@ -1,21 +1,20 @@
 //
-//  ContentView.swift
+//  RSSListView.swift
 //  Newspaperss
 //
 //  Created by Mark Cornelisse on 29/07/2023.
 //
 
 import SwiftUI
-import CoreData
 
-struct ContentView: View {
+struct RSSListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -41,7 +40,7 @@ struct ContentView: View {
             Text("Select an item")
         }
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -81,8 +80,8 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+struct RSSListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        RSSListView()
     }
 }

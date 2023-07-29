@@ -13,6 +13,10 @@
 		38B97E4B2A753A3B0056B094 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B97E4A2A753A3B0056B094 /* Preview Assets.xcassets */; };
 		38B97E4D2A753A3B0056B094 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E4C2A753A3B0056B094 /* Persistence.swift */; };
 		38B97E502A753A3B0056B094 /* Newspaperss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E4E2A753A3B0056B094 /* Newspaperss.xcdatamodeld */; };
+		38B97E592A753B230056B094 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 38B97E582A753B230056B094 /* GoogleMobileAds */; };
+		38B97E5C2A753BE50056B094 /* RSSListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E5B2A753BE50056B094 /* RSSListView.swift */; };
+		38B97E602A753D5C0056B094 /* URLToStringValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E5F2A753D5C0056B094 /* URLToStringValueTransformer.swift */; };
+		38B97E622A7545EF0056B094 /* FeedEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E612A7545EF0056B094 /* FeedEditorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		38B97E4C2A753A3B0056B094 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		38B97E4F2A753A3B0056B094 /* Newspaperss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Newspaperss.xcdatamodel; sourceTree = "<group>"; };
 		38B97E512A753A3B0056B094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38B97E5B2A753BE50056B094 /* RSSListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSListView.swift; sourceTree = "<group>"; };
+		38B97E5F2A753D5C0056B094 /* URLToStringValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLToStringValueTransformer.swift; sourceTree = "<group>"; };
+		38B97E612A7545EF0056B094 /* FeedEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEditorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B97E592A753B230056B094 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				38B97E432A753A3A0056B094 /* NewspaperssApp.swift */,
-				38B97E452A753A3A0056B094 /* ContentView.swift */,
+				38B97E5A2A753BB50056B094 /* Views */,
 				38B97E472A753A3B0056B094 /* Assets.xcassets */,
-				38B97E4C2A753A3B0056B094 /* Persistence.swift */,
+				38B97E5D2A753D1C0056B094 /* Engines */,
 				38B97E512A753A3B0056B094 /* Info.plist */,
 				38B97E4E2A753A3B0056B094 /* Newspaperss.xcdatamodeld */,
 				38B97E492A753A3B0056B094 /* Preview Content */,
@@ -73,6 +81,33 @@
 				38B97E4A2A753A3B0056B094 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		38B97E5A2A753BB50056B094 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				38B97E452A753A3A0056B094 /* ContentView.swift */,
+				38B97E612A7545EF0056B094 /* FeedEditorView.swift */,
+				38B97E5B2A753BE50056B094 /* RSSListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		38B97E5D2A753D1C0056B094 /* Engines */ = {
+			isa = PBXGroup;
+			children = (
+				38B97E5E2A753D410056B094 /* Persistence */,
+			);
+			path = Engines;
+			sourceTree = "<group>";
+		};
+		38B97E5E2A753D410056B094 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				38B97E4C2A753A3B0056B094 /* Persistence.swift */,
+				38B97E5F2A753D5C0056B094 /* URLToStringValueTransformer.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +126,9 @@
 			dependencies = (
 			);
 			name = Newspaperss;
+			packageProductDependencies = (
+				38B97E582A753B230056B094 /* GoogleMobileAds */,
+			);
 			productName = Newspaperss;
 			productReference = 38B97E402A753A3A0056B094 /* Newspaperss.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 38B97E372A753A3A0056B094;
+			packageReferences = (
+				38B97E572A753B230056B094 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 38B97E412A753A3A0056B094 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,9 +187,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B97E4D2A753A3B0056B094 /* Persistence.swift in Sources */,
+				38B97E602A753D5C0056B094 /* URLToStringValueTransformer.swift in Sources */,
+				38B97E5C2A753BE50056B094 /* RSSListView.swift in Sources */,
 				38B97E462A753A3A0056B094 /* ContentView.swift in Sources */,
 				38B97E442A753A3A0056B094 /* NewspaperssApp.swift in Sources */,
 				38B97E502A753A3B0056B094 /* Newspaperss.xcdatamodeld in Sources */,
+				38B97E622A7545EF0056B094 /* FeedEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		38B97E572A753B230056B094 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		38B97E582A753B230056B094 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38B97E572A753B230056B094 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		38B97E4E2A753A3B0056B094 /* Newspaperss.xcdatamodeld */ = {
