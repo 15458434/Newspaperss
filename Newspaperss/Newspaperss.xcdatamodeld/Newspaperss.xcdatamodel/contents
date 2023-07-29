@@ -4,6 +4,7 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="RSSFeedItem" representedClassName="RSSFeedItem" syncable="YES" codeGenerationType="class">
+        <attribute name="sortValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="url" optional="YES" attributeType="Transformable" valueTransformerName="URLToStringValueTransformer" customClassName="NSURL"/>
     </entity>
 </model>

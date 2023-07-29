@@ -11,18 +11,22 @@ struct RSSListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \RSSFeedItem.sortValue, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<RSSFeedItem>
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        Text("Item at \(item.url!.absoluteString!)")
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        if item.url?.absoluteString != nil {
+                            Text(item.url!.absoluteString!)
+                        } else {
+                            Text("Invalid RSSFeed URL")
+                        }
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -37,14 +41,14 @@ struct RSSListView: View {
                     }
                 }
             }
-            Text("Select an item")
+            .navigationTitle("Edit Feed")
         }
     }
     
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = RSSFeedItem(context: viewContext)
+            newItem.url = NSURL(string: "https://www.nu.nl/rss/Algemeen")
 
             do {
                 try viewContext.save()
