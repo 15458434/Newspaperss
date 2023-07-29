@@ -1,29 +1,32 @@
 //
-//  ContentView.swift
+//  RSSListView.swift
 //  Newspaperss
 //
 //  Created by Mark Cornelisse on 29/07/2023.
 //
 
 import SwiftUI
-import CoreData
 
-struct ContentView: View {
+struct RSSListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \RSSFeedItem.url?.absoluteString, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
-
+    private var items: FetchedResults<RSSFeedItem>
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        RSSListDetailView(feedItem: item)
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        if item.url?.absoluteString != nil {
+                            Text(item.url!.absoluteString!)
+                        } else {
+                            Text("Invalid RSSFeed URL")
+                        }
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -38,14 +41,14 @@ struct ContentView: View {
                     }
                 }
             }
-            Text("Select an item")
+            .navigationTitle("Edit Feed")
         }
     }
-
+    
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = RSSFeedItem(context: viewContext)
+            newItem.url = NSURL(string: "https://www.nu.nl/rss/Algemeen")
 
             do {
                 try viewContext.save()
@@ -81,8 +84,8 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+struct RSSListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        RSSListView()
     }
 }
