@@ -11,11 +11,11 @@ import CoreData
 struct ContentView: View {
     var body: some View {
         TabView() {
-            FeedEditorView()
+            FeedListView()
                 .tabItem {
                     Label("News Feed", systemImage: "newspaper")
                 }
-            RSSListView()
+            FeedSourceListView()
                 .tabItem {
                     Label("Edit Feed", systemImage: "timeline.selection")
                 }
