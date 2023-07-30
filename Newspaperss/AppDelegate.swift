@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func startGoogleAds() {
         GADMobileAds.sharedInstance().start()
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID ]
+        let iPhone11ProMarkID = "e1e7c0fe434a85ce976f84098f5ce9d2"
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID, iPhone11ProMarkID ]
     }
     
     // MARK: UIApplicationDelegate
