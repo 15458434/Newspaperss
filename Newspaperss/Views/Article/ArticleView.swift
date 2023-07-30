@@ -13,19 +13,22 @@ struct ArticleView: View {
     
     var body: some View {
         NavigationView {
-            WebView(url: feedItem.link)
-                .ignoresSafeArea()
-                .navigationTitle(feedItem.title ?? "Article")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
+            VStack {
+                ArticleTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
+                WebView(url: feedItem.link)
+                    .ignoresSafeArea()
+                    .navigationTitle(feedItem.title ?? "Article")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Image(systemName: "xmark")
+                            }
+                            
+                        }
                     }
-
-                }
             }
         }
     }

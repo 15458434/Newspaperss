@@ -15,6 +15,7 @@
 		38B588602A76D62A002F3391 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5885F2A76D62A002F3391 /* BannerViewController.swift */; };
 		38B588632A76D6EF002F3391 /* FeedListTopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B588622A76D6EF002F3391 /* FeedListTopBannerView.swift */; };
 		38B588662A76E4F2002F3391 /* FeedSourceTopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B588652A76E4F2002F3391 /* FeedSourceTopBannerView.swift */; };
+		38B588682A76E9FA002F3391 /* ArticleTopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B588672A76E9FA002F3391 /* ArticleTopBannerView.swift */; };
 		38B97E462A753A3A0056B094 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E452A753A3A0056B094 /* ContentView.swift */; };
 		38B97E482A753A3B0056B094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B97E472A753A3B0056B094 /* Assets.xcassets */; };
 		38B97E4B2A753A3B0056B094 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B97E4A2A753A3B0056B094 /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		38B5885F2A76D62A002F3391 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		38B588622A76D6EF002F3391 /* FeedListTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTopBannerView.swift; sourceTree = "<group>"; };
 		38B588652A76E4F2002F3391 /* FeedSourceTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceTopBannerView.swift; sourceTree = "<group>"; };
+		38B588672A76E9FA002F3391 /* ArticleTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTopBannerView.swift; sourceTree = "<group>"; };
 		38B97E402A753A3A0056B094 /* Newspaperss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newspaperss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B97E452A753A3A0056B094 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38B97E472A753A3B0056B094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				38B587EB2A767F53002F3391 /* ArticleView.swift */,
 				38B587E72A767D5D002F3391 /* WebView.swift */,
+				38B588672A76E9FA002F3391 /* ArticleTopBannerView.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				38B97E832A7560B80056B094 /* RSSFeedItemObject.m in Sources */,
 				38B97E4D2A753A3B0056B094 /* Persistence.swift in Sources */,
 				38B97E822A7560B80056B094 /* RSSFeedEngine.m in Sources */,
+				38B588682A76E9FA002F3391 /* ArticleTopBannerView.swift in Sources */,
 				38B97E602A753D5C0056B094 /* URLToStringValueTransformer.swift in Sources */,
 				38B97E8E2A7589E20056B094 /* RSSFeedNetworkOperation.swift in Sources */,
 				38B97E6C2A7552540056B094 /* FeedSourceListDetailEditView.swift in Sources */,
