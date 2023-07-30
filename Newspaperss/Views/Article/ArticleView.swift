@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ArticleView: View {
+    @Environment(\.presentationMode) var presentationMode
     let feedItem: RSSFeedItemObject
     
     var body: some View {
@@ -16,6 +17,16 @@ struct ArticleView: View {
                 .ignoresSafeArea()
                 .navigationTitle(feedItem.title ?? "Article")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+
+                }
+            }
         }
     }
 }
