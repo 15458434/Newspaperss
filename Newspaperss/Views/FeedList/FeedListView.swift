@@ -10,13 +10,29 @@ import SwiftUI
 struct FeedListView: View {
     @StateObject var feedListModel: FeedListModel
     
+    @State private var isPresentingArticleView = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 6) {
                     ForEach(feedListModel.feedItemObjects, id: \RSSFeedItemObject.self) { feedListObject in
-                        FeedListItemView(item: feedListObject)
-                            .padding([.top, .leading, .trailing])
+                        Button {
+                            isPresentingArticleView = true
+                        } label: {
+                            FeedListItemView(item: feedListObject)
+                                .padding([.top, .leading, .trailing])
+                        }
+                        .sheet(isPresented: $isPresentingArticleView) {
+                            ArticleView(feedItem: feedListObject)
+                        }
+
+//                        NavigationLink {
+//                            ArticleView(feedItem: feedListObject)
+//                        } label: {
+//                            FeedListItemView(item: feedListObject)
+//                                .padding([.top, .leading, .trailing])
+//                        }
                     }
                 }
                 .background(Color("scrollViewBackground"))

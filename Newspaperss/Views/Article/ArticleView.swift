@@ -11,10 +11,12 @@ struct ArticleView: View {
     let feedItem: RSSFeedItemObject
     
     var body: some View {
-        WebView(url: feedItem.link)
-            .ignoresSafeArea()
-            .navigationTitle(feedItem.title ?? "Article")
+        NavigationView {
+            WebView(url: feedItem.link)
+                .ignoresSafeArea()
+                .navigationTitle(feedItem.title ?? "Article")
             .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 
