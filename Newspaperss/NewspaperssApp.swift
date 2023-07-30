@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct NewspaperssApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate: AppDelegate
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

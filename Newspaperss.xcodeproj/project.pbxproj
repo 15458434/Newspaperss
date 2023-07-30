@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		38B587E82A767D5D002F3391 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587E72A767D5D002F3391 /* WebView.swift */; };
 		38B587EC2A767F53002F3391 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587EB2A767F53002F3391 /* ArticleView.swift */; };
+		38B587FD2A76B59E002F3391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587FC2A76B59E002F3391 /* AppDelegate.swift */; };
 		38B97E442A753A3A0056B094 /* NewspaperssApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E432A753A3A0056B094 /* NewspaperssApp.swift */; };
 		38B97E462A753A3A0056B094 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E452A753A3A0056B094 /* ContentView.swift */; };
 		38B97E482A753A3B0056B094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B97E472A753A3B0056B094 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		38B587E72A767D5D002F3391 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		38B587EB2A767F53002F3391 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		38B587FC2A76B59E002F3391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38B97E402A753A3A0056B094 /* Newspaperss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newspaperss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B97E432A753A3A0056B094 /* NewspaperssApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewspaperssApp.swift; sourceTree = "<group>"; };
 		38B97E452A753A3A0056B094 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				38B97E432A753A3A0056B094 /* NewspaperssApp.swift */,
+				38B587FC2A76B59E002F3391 /* AppDelegate.swift */,
 				38B97E5A2A753BB50056B094 /* Views */,
 				38B97E472A753A3B0056B094 /* Assets.xcassets */,
 				38B97E5D2A753D1C0056B094 /* Engines */,
@@ -284,6 +287,7 @@
 				38B97E7F2A7560B80056B094 /* RSSFeedImageObject.m in Sources */,
 				38B97E502A753A3B0056B094 /* Newspaperss.xcdatamodeld in Sources */,
 				38B97E622A7545EF0056B094 /* FeedListView.swift in Sources */,
+				38B587FD2A76B59E002F3391 /* AppDelegate.swift in Sources */,
 				38B97E812A7560B80056B094 /* RSSFeedChannelObject.m in Sources */,
 				38B97E882A7578700056B094 /* FeedListModel.swift in Sources */,
 			);
