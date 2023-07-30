@@ -13,9 +13,22 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        let urls = [
+            "https://www.nu.nl/rss/Algemeen",
+            "https://www.nu.nl/rss/Economie",
+            "https://www.nu.nl/rss/Sport",
+            "https://www.nu.nl/rss/Achterklap",
+            "https://www.nu.nl/rss/Opmerkelijk",
+            "https://www.nu.nl/rss/Opmerkelijk",
+            "https://www.nu.nl/rss/Film",
+            "https://www.nu.nl/rss/Wetenschap",
+            "https://www.nu.nl/rss/Tech",
+            "https://www.nu.nl/rss/Gezondheid"
+        ].map { NSURL(string: $0)! }
+        for url in urls.enumerated() {
+            let newItem = RSSFeedItem(context: viewContext)
+            newItem.url = url.element
+            newItem.sortValue = Double(url.offset)
         }
         do {
             try viewContext.save()

@@ -11,11 +11,11 @@ import CoreData
 struct ContentView: View {
     var body: some View {
         TabView() {
-            FeedEditorView()
+            FeedListView(feedListModel: FeedListModel(managedObjectContext: PersistenceController.shared.container.newBackgroundContext()))
                 .tabItem {
                     Label("News Feed", systemImage: "newspaper")
                 }
-            RSSListView()
+            FeedSourceListView()
                 .tabItem {
                     Label("Edit Feed", systemImage: "timeline.selection")
                 }

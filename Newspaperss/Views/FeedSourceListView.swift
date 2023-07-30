@@ -1,5 +1,5 @@
 //
-//  RSSListView.swift
+//  FeedSourceListView.swift
 //  Newspaperss
 //
 //  Created by Mark Cornelisse on 29/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RSSListView: View {
+struct FeedSourceListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -20,7 +20,7 @@ struct RSSListView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        RSSListDetailView(feedItem: item)
+                        FeedSourceListDetailEditView(feedItem: item)
                     } label: {
                         if item.url?.absoluteString != nil {
                             Text(item.url!.absoluteString!)
@@ -49,6 +49,7 @@ struct RSSListView: View {
         withAnimation {
             let newItem = RSSFeedItem(context: viewContext)
             newItem.url = NSURL(string: "https://www.nu.nl/rss/Algemeen")
+            newItem.sortValue = Double(items.count)
 
             do {
                 try viewContext.save()
@@ -77,15 +78,8 @@ struct RSSListView: View {
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
-struct RSSListView_Previews: PreviewProvider {
+struct FeedSourceListView_Previews: PreviewProvider {
     static var previews: some View {
-        RSSListView()
+        FeedSourceListView()
     }
 }

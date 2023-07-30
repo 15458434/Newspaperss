@@ -1,5 +1,5 @@
 //
-//  RSSListDetailView.swift
+//  FeedSourceListDetailEditView.swift
 //  Newspaperss
 //
 //  Created by Mark Cornelisse on 29/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RSSListDetailView: View {
+struct FeedSourceListDetailEditView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @ObservedObject var feedItem: RSSFeedItem
@@ -17,7 +17,7 @@ struct RSSListDetailView: View {
     var body: some View {
         ZStack {
             TextFieldContainerView(text: $urlString)
-                .background(Color(uiColor: .systemBackground))
+                .background(Color("cellBackground"))
                 .cornerRadius(6)
                 .padding()
                 .onAppear {
@@ -38,11 +38,11 @@ struct RSSListDetailView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(uiColor: .systemGroupedBackground))
+        .background(Color("scrollViewBackground"))
     }
 }
 
-struct RSSListDetailView_Previews:
+struct FeedSourceListDetailEditView_Previews:
     PreviewProvider {
     static let persistence = PersistenceController(inMemory: true)
     
@@ -53,6 +53,6 @@ struct RSSListDetailView_Previews:
     }
     
     static var previews: some View {
-        RSSListDetailView(feedItem: feedItem)
+        FeedSourceListDetailEditView(feedItem: feedItem)
     }
 }
