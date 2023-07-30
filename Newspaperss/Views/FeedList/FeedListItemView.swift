@@ -18,13 +18,13 @@ struct FeedListItemView: View {
                     .multilineTextAlignment(.leading)
                 Text(item.descriptionTag)
                     .font(.subheadline)
-                    .foregroundColor(Color(uiColor: .secondaryLabel))
+                    .foregroundColor(Color("secondaryLabel"))
                     .multilineTextAlignment(.leading)
             })
             Spacer()
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        .background(Color(uiColor: .systemBackground))
+        .background(Color("cellBackground"))
         .cornerRadius(6)
     }
 }

@@ -17,7 +17,7 @@ struct FeedSourceListDetailEditView: View {
     var body: some View {
         ZStack {
             TextFieldContainerView(text: $urlString)
-                .background(Color(uiColor: .systemBackground))
+                .background(Color("cellBackground"))
                 .cornerRadius(6)
                 .padding()
                 .onAppear {
@@ -38,7 +38,7 @@ struct FeedSourceListDetailEditView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(uiColor: .systemGroupedBackground))
+        .background(Color("scrollViewBackground"))
     }
 }
 

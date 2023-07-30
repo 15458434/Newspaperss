@@ -19,7 +19,7 @@ struct FeedListView: View {
                             .padding([.top, .leading, .trailing])
                     }
                 }
-                .background(Color(uiColor: .systemGroupedBackground))
+                .background(Color("scrollViewBackground"))
             }
             .navigationTitle("News Feed")
             .onAppear {
