@@ -34,10 +34,12 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
+    <key>GADIsAdManagerApp</key>
+    <true/>
+    <key>GADDelayAppMeasurementInit</key>
+    <true/>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3940256099942544~1458002511</string>
-	<key>GADIsAdManagerApp</key>
-	<true/>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
