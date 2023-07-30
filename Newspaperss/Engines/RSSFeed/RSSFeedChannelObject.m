@@ -27,19 +27,6 @@
     [_items addObject:item];
 }
 
-- (void)removeCoronaRelatedItems {
-    NSArray<NSString *> *valuesForCovid = @[@"коронавирус", @"covid-19", @"covid", @"корона"];
-    NSMutableArray<NSPredicate *> *predicatesThatFilterCovid = [[NSMutableArray alloc] init];
-    for (NSString *covidString in valuesForCovid) {
-        NSPredicate *newTitlePredicate = [NSPredicate predicateWithFormat:@"NOT self.title CONTAINS[c] %@", covidString];
-        [predicatesThatFilterCovid addObject:newTitlePredicate];
-        NSPredicate *newContentPredicate = [NSPredicate predicateWithFormat:@"NOT self.encoded CONTAINS[c] %@", covidString];
-        [predicatesThatFilterCovid addObject:newContentPredicate];
-    }
-    NSCompoundPredicate *filterCovid = [NSCompoundPredicate andPredicateWithSubpredicates:predicatesThatFilterCovid];
-    [_items filterUsingPredicate:filterCovid];
-}
-
 #pragma mark - RSSFeedParserDelegateReceiver
 
 - (NSString *)xmlIdentifier {
