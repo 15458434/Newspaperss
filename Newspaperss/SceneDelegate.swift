@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UIHostingController(rootView: ContentView()
+        window.rootViewController = ConsentHostingViewController(rootView: ContentView()
             .environment(\.managedObjectContext, persistenceController.container.viewContext))
         self.window = window
         self.window!.makeKeyAndVisible()
