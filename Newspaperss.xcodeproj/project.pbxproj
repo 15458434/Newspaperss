@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		38B587E82A767D5D002F3391 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587E72A767D5D002F3391 /* WebView.swift */; };
 		38B587EC2A767F53002F3391 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587EB2A767F53002F3391 /* ArticleView.swift */; };
-		38B97E442A753A3A0056B094 /* NewspaperssApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E432A753A3A0056B094 /* NewspaperssApp.swift */; };
+		38B587FD2A76B59E002F3391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587FC2A76B59E002F3391 /* AppDelegate.swift */; };
+		38B5883A2A76BBC4002F3391 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B588392A76BBC4002F3391 /* SceneDelegate.swift */; };
+		38B5885E2A76D0F0002F3391 /* ConsentHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5885D2A76D0F0002F3391 /* ConsentHostingViewController.swift */; };
+		38B588602A76D62A002F3391 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5885F2A76D62A002F3391 /* BannerViewController.swift */; };
+		38B588632A76D6EF002F3391 /* FeedListTopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B588622A76D6EF002F3391 /* FeedListTopBannerView.swift */; };
+		38B588662A76E4F2002F3391 /* FeedSourceTopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B588652A76E4F2002F3391 /* FeedSourceTopBannerView.swift */; };
+		38B588682A76E9FA002F3391 /* ArticleTopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B588672A76E9FA002F3391 /* ArticleTopBannerView.swift */; };
 		38B97E462A753A3A0056B094 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E452A753A3A0056B094 /* ContentView.swift */; };
 		38B97E482A753A3B0056B094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B97E472A753A3B0056B094 /* Assets.xcassets */; };
 		38B97E4B2A753A3B0056B094 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B97E4A2A753A3B0056B094 /* Preview Assets.xcassets */; };
@@ -35,8 +41,14 @@
 /* Begin PBXFileReference section */
 		38B587E72A767D5D002F3391 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		38B587EB2A767F53002F3391 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		38B587FC2A76B59E002F3391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38B588392A76BBC4002F3391 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		38B5885D2A76D0F0002F3391 /* ConsentHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentHostingViewController.swift; sourceTree = "<group>"; };
+		38B5885F2A76D62A002F3391 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		38B588622A76D6EF002F3391 /* FeedListTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTopBannerView.swift; sourceTree = "<group>"; };
+		38B588652A76E4F2002F3391 /* FeedSourceTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceTopBannerView.swift; sourceTree = "<group>"; };
+		38B588672A76E9FA002F3391 /* ArticleTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTopBannerView.swift; sourceTree = "<group>"; };
 		38B97E402A753A3A0056B094 /* Newspaperss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newspaperss.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		38B97E432A753A3A0056B094 /* NewspaperssApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewspaperssApp.swift; sourceTree = "<group>"; };
 		38B97E452A753A3A0056B094 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38B97E472A753A3B0056B094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38B97E4A2A753A3B0056B094 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -84,8 +96,36 @@
 			children = (
 				38B587EB2A767F53002F3391 /* ArticleView.swift */,
 				38B587E72A767D5D002F3391 /* WebView.swift */,
+				38B588672A76E9FA002F3391 /* ArticleTopBannerView.swift */,
 			);
 			path = Article;
+			sourceTree = "<group>";
+		};
+		38B5885C2A76D0BD002F3391 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				38B5885D2A76D0F0002F3391 /* ConsentHostingViewController.swift */,
+				38B588612A76D635002F3391 /* Banner */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		38B588612A76D635002F3391 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				38B5885F2A76D62A002F3391 /* BannerViewController.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		38B588642A76E4CF002F3391 /* FeedSource */ = {
+			isa = PBXGroup;
+			children = (
+				38B97E5B2A753BE50056B094 /* FeedSourceListView.swift */,
+				38B588652A76E4F2002F3391 /* FeedSourceTopBannerView.swift */,
+				38B97E6B2A7552540056B094 /* FeedSourceListDetailEditView.swift */,
+			);
+			path = FeedSource;
 			sourceTree = "<group>";
 		};
 		38B97E372A753A3A0056B094 = {
@@ -107,7 +147,9 @@
 		38B97E422A753A3A0056B094 /* Newspaperss */ = {
 			isa = PBXGroup;
 			children = (
-				38B97E432A753A3A0056B094 /* NewspaperssApp.swift */,
+				38B587FC2A76B59E002F3391 /* AppDelegate.swift */,
+				38B588392A76BBC4002F3391 /* SceneDelegate.swift */,
+				38B5885C2A76D0BD002F3391 /* ViewControllers */,
 				38B97E5A2A753BB50056B094 /* Views */,
 				38B97E472A753A3B0056B094 /* Assets.xcassets */,
 				38B97E5D2A753D1C0056B094 /* Engines */,
@@ -132,8 +174,7 @@
 				38B97E452A753A3A0056B094 /* ContentView.swift */,
 				38B97E862A75785F0056B094 /* FeedList */,
 				38B587E52A767898002F3391 /* Article */,
-				38B97E5B2A753BE50056B094 /* FeedSourceListView.swift */,
-				38B97E6B2A7552540056B094 /* FeedSourceListDetailEditView.swift */,
+				38B588642A76E4CF002F3391 /* FeedSource */,
 				38B97E6D2A755DAC0056B094 /* TextFieldContainerView.swift */,
 			);
 			path = Views;
@@ -183,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				38B97E612A7545EF0056B094 /* FeedListView.swift */,
+				38B588622A76D6EF002F3391 /* FeedListTopBannerView.swift */,
 				38B97E8B2A7584600056B094 /* FeedListItemView.swift */,
 				38B97E872A7578700056B094 /* FeedListModel.swift */,
 			);
@@ -269,21 +311,27 @@
 				38B97E832A7560B80056B094 /* RSSFeedItemObject.m in Sources */,
 				38B97E4D2A753A3B0056B094 /* Persistence.swift in Sources */,
 				38B97E822A7560B80056B094 /* RSSFeedEngine.m in Sources */,
+				38B588682A76E9FA002F3391 /* ArticleTopBannerView.swift in Sources */,
 				38B97E602A753D5C0056B094 /* URLToStringValueTransformer.swift in Sources */,
 				38B97E8E2A7589E20056B094 /* RSSFeedNetworkOperation.swift in Sources */,
 				38B97E6C2A7552540056B094 /* FeedSourceListDetailEditView.swift in Sources */,
+				38B588662A76E4F2002F3391 /* FeedSourceTopBannerView.swift in Sources */,
 				38B97E6E2A755DAC0056B094 /* TextFieldContainerView.swift in Sources */,
+				38B5883A2A76BBC4002F3391 /* SceneDelegate.swift in Sources */,
 				38B587EC2A767F53002F3391 /* ArticleView.swift in Sources */,
 				38B97E802A7560B80056B094 /* RSSFeedParserDelegate.m in Sources */,
 				38B97E5C2A753BE50056B094 /* FeedSourceListView.swift in Sources */,
+				38B588602A76D62A002F3391 /* BannerViewController.swift in Sources */,
 				38B97E7E2A7560B80056B094 /* XMLElement.m in Sources */,
+				38B5885E2A76D0F0002F3391 /* ConsentHostingViewController.swift in Sources */,
 				38B97E462A753A3A0056B094 /* ContentView.swift in Sources */,
-				38B97E442A753A3A0056B094 /* NewspaperssApp.swift in Sources */,
 				38B97E8C2A7584600056B094 /* FeedListItemView.swift in Sources */,
 				38B587E82A767D5D002F3391 /* WebView.swift in Sources */,
 				38B97E7F2A7560B80056B094 /* RSSFeedImageObject.m in Sources */,
 				38B97E502A753A3B0056B094 /* Newspaperss.xcdatamodeld in Sources */,
 				38B97E622A7545EF0056B094 /* FeedListView.swift in Sources */,
+				38B588632A76D6EF002F3391 /* FeedListTopBannerView.swift in Sources */,
+				38B587FD2A76B59E002F3391 /* AppDelegate.swift in Sources */,
 				38B97E812A7560B80056B094 /* RSSFeedChannelObject.m in Sources */,
 				38B97E882A7578700056B094 /* FeedListModel.swift in Sources */,
 			);
@@ -419,6 +467,7 @@
 				DEVELOPMENT_TEAM = Z6JP26PUUY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Newspaperss/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -431,6 +480,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GreenHair.Newspaperss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -458,6 +508,7 @@
 				DEVELOPMENT_TEAM = Z6JP26PUUY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Newspaperss/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,6 +521,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GreenHair.Newspaperss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -39,6 +39,7 @@ struct FeedSourceListDetailEditView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("scrollViewBackground"))
+        .navigationTitle("Enter RSS URL")
     }
 }
 
