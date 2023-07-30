@@ -31,8 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addItem:(RSSFeedItemObject *)item;
 
-- (void)removeCoronaRelatedItems;
-
 #pragma mark - NSObject
 
 @end
