@@ -13,10 +13,12 @@ struct ArticleView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                ArticleTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
+            if #available(iOS 15.0, *) {
                 WebView(url: feedItem.link)
-                    .ignoresSafeArea()
+                    .safeAreaInset(edge: .top) {
+                        ArticleTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
+                    }
+                    .ignoresSafeArea(edges: [.leading, .bottom, .bottom])
                     .navigationTitle(feedItem.title ?? "Article")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
@@ -29,7 +31,26 @@ struct ArticleView: View {
                             
                         }
                     }
+            } else {
+                VStack {
+                    ArticleTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
+                    WebView(url: feedItem.link)
+                        .ignoresSafeArea()
+                        .navigationTitle(feedItem.title ?? "Article")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button {
+                                    presentationMode.wrappedValue.dismiss()
+                                } label: {
+                                    Image(systemName: "xmark")
+                                }
+                                
+                            }
+                        }
+                }
             }
+            
         }
     }
 }
