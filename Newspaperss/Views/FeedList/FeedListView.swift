@@ -32,10 +32,10 @@ struct FeedListView: View {
                     .background(Color("scrollViewBackground"))
                 }
                 .navigationTitle("News Feed")
-                .overlay(FeedListTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing).offset(y: -60), alignment: .top)
+                .background(Color("scrollViewBackground"))
                 .safeAreaInset(edge: .top, spacing: 0) {
-                    Spacer()
-                        .frame(height: 60)
+                    FeedListTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .top)
+                        .background(Color("scrollViewBackground"))
                 }
                 .onAppear {
                     feedListModel.fetch()
