@@ -14,6 +14,7 @@ struct FeedListView: View {
     
     @available(iOS, introduced: 13.0, obsoleted: 15.0, message: "iOS 15 introduces func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment = .center, spacing: CGFloat? = nil, @ViewBuilder content: () -> V) -> some View where V : View")
     @State var adBannerHeight: CGFloat = 0
+    @State private var items = [RSSFeedItemObject]()
     
     var body: some View {
         NavigationView {
@@ -21,11 +22,18 @@ struct FeedListView: View {
                 ScrollView {
                     scrollViewContent
                 }
+                .emptyListPlaceHolder($items, placeHolderContent: {
+                    emptyMessage
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                })
                 .navigationTitle("News Feed")
                 .background(Color("scrollViewBackground"))
                 .safeAreaInset(edge: .top, spacing: 0) {
                     adBanner
                 }
+                .onReceive(feedListModel.$feedItemObjects, perform: { newValue in
+                    items = newValue
+                })
                 .onAppear {
                     feedListModel.fetch()
                 }
@@ -50,7 +58,7 @@ struct FeedListView: View {
     
     var scrollViewContent: some View {
         LazyVStack(alignment: .leading, spacing: 6) {
-            ForEach(feedListModel.feedItemObjects, id: \RSSFeedItemObject.self) { feedListObject in
+            ForEach(items, id: \RSSFeedItemObject.self) { feedListObject in
                 Button {
                     isPresentingArticleView = true
                 } label: {
@@ -68,6 +76,19 @@ struct FeedListView: View {
     var adBanner: some View {
         FeedListTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .top)
             .background(Color("scrollViewBackground"))
+    }
+    
+    var emptyMessage: some View {
+        VStack {
+            Image(systemName: "timeline.selection")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 120, height: 120)
+                .padding([.bottom])
+            Text("No RSS Feed selected")
+            Text("Go to the Edit Feed Tab to add RSS Feeds")
+        }
+        .foregroundColor(Color("scrollEmptyMessage"))
     }
 }
 
