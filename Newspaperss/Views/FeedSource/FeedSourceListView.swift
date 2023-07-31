@@ -33,9 +33,9 @@ struct FeedSourceListView: View {
                     .onDelete(perform: deleteItems)
                 }
                 .safeAreaInset(edge: .top, content: {
-                    Spacer().frame(height: 60)
+                    FeedSourceTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
+                        .background(Color("scrollViewBackground"))
                 })
-                .overlay(FeedSourceTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing), alignment: .top)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
