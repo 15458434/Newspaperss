@@ -16,26 +16,12 @@ struct FeedListView: View {
         NavigationView {
             if #available(iOS 15.0, *) {
                 ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 6) {
-                        ForEach(feedListModel.feedItemObjects, id: \RSSFeedItemObject.self) { feedListObject in
-                            Button {
-                                isPresentingArticleView = true
-                            } label: {
-                                FeedListItemView(item: feedListObject)
-                                    .padding([.top, .leading, .trailing])
-                            }
-                            .sheet(isPresented: $isPresentingArticleView) {
-                                ArticleView(feedItem: feedListObject)
-                            }
-                        }
-                    }
-                    .background(Color("scrollViewBackground"))
+                    scrollViewContent
                 }
                 .navigationTitle("News Feed")
                 .background(Color("scrollViewBackground"))
                 .safeAreaInset(edge: .top, spacing: 0) {
-                    FeedListTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .top)
-                        .background(Color("scrollViewBackground"))
+                    adBanner
                 }
                 .onAppear {
                     feedListModel.fetch()
@@ -65,6 +51,28 @@ struct FeedListView: View {
                 }
             }
         }
+    }
+    
+    var scrollViewContent: some View {
+        LazyVStack(alignment: .leading, spacing: 6) {
+            ForEach(feedListModel.feedItemObjects, id: \RSSFeedItemObject.self) { feedListObject in
+                Button {
+                    isPresentingArticleView = true
+                } label: {
+                    FeedListItemView(item: feedListObject)
+                        .padding([.top, .leading, .trailing])
+                }
+                .sheet(isPresented: $isPresentingArticleView) {
+                    ArticleView(feedItem: feedListObject)
+                }
+            }
+        }
+        .background(Color("scrollViewBackground"))
+    }
+    
+    var adBanner: some View {
+        FeedListTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .top)
+            .background(Color("scrollViewBackground"))
     }
 }
 
