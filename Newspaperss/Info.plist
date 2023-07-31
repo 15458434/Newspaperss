@@ -6,6 +6,8 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -34,12 +36,12 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
-    <key>GADIsAdManagerApp</key>
-    <true/>
-    <key>GADDelayAppMeasurementInit</key>
-    <true/>
+	<key>GADIsAdManagerApp</key>
+	<true/>
+	<key>GADDelayAppMeasurementInit</key>
+	<true/>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-5354415674074435~6484665333</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
