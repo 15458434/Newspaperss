@@ -32,6 +32,12 @@ struct FeedSourceListView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
+                .noDataPlaceHolder(items.isEmpty, placeHolderContent: {
+                    ScrollView {
+                        emptyMessage
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
+                })
                 .safeAreaInset(edge: .top, content: {
                     FeedSourceTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
                         .background(Color("scrollViewBackground"))
@@ -47,6 +53,7 @@ struct FeedSourceListView: View {
                     }
                 }
                 .navigationTitle("Edit Feed")
+                .background(Color("scrollViewBackground"))
             } else {
                 List {
                     ForEach(items) { item in
@@ -77,6 +84,19 @@ struct FeedSourceListView: View {
                 .navigationTitle("Edit Feed")
             }
         }
+    }
+    
+    var emptyMessage: some View {
+        VStack {
+            Image(systemName: "timeline.selection")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 120, height: 120)
+                .padding([.bottom])
+            Text("No RSS Feeds present")
+            Text("Please add RSS Feeds by pressing the + button")
+        }
+        .foregroundColor(Color("scrollEmptyMessage"))
     }
     
     private func addItem() {

@@ -23,8 +23,10 @@ struct FeedListView: View {
                     scrollViewContent
                 }
                 .noDataPlaceHolder(items.isEmpty, placeHolderContent: {
-                    emptyMessage
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    ScrollView {
+                        emptyMessage
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
                 })
                 .navigationTitle("News Feed")
                 .background(Color("scrollViewBackground"))
