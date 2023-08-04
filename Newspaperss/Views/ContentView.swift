@@ -7,8 +7,11 @@
 
 import SwiftUI
 import CoreData
+import GoogleMobileAds
 
 struct ContentView: View {
+    @State var googleAdapterState: GADAdapterStatus?
+    
     var body: some View {
         TabView() {
             FeedListView(feedListModel: FeedListModel(managedObjectContext: PersistenceController.shared.container.newBackgroundContext()))
@@ -20,6 +23,11 @@ struct ContentView: View {
                     Label("Edit Feed", systemImage: "timeline.selection")
                 }
         }
+        .environment(\.googleAdapterState, nil)
+        .onReceive(GADMobileAds.sharedInstance().initializationStatus.publisher(for: \.adapterStatusesByClassName), perform: { adapterStatusesByClassName in
+            debugPrint("status: \(adapterStatusesByClassName)")
+            self.googleAdapterState = adapterStatusesByClassName["GADMobileAds"]
+        })
     }
 }
 

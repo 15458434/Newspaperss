@@ -6,20 +6,21 @@
 //
 
 import SwiftUI
+import CoreData
 
 extension View {
-    func emptyListPlaceHolder<V: Collection, Content: View>(_ data: Binding<V>, @ViewBuilder placeHolderContent: @escaping () -> Content) -> some View {
-        return self.modifier(EmptyListPlaceHolderViewModifier(data: data, placeHolderContent: placeHolderContent))
+    func noDataPlaceHolder<Content: View>(_ isEmpty: Bool, @ViewBuilder placeHolderContent: @escaping () -> Content) -> some View {
+        return self.modifier(NoDataPlaceHolderViewModifier(isEmpty: isEmpty, placeHolderContent: placeHolderContent))
     }
 }
 
-struct EmptyListPlaceHolderViewModifier<V: Collection, P: View>: ViewModifier {
-    @Binding var data: V
+fileprivate struct NoDataPlaceHolderViewModifier<P: View>: ViewModifier {
+    let isEmpty: Bool
     
     @ViewBuilder var placeHolderContent: () -> P
     
     func body(content: Content) -> some View {
-        if data.isEmpty {
+        if isEmpty {
             placeHolderContent()
         } else {
             content

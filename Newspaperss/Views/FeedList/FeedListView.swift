@@ -22,7 +22,7 @@ struct FeedListView: View {
                 ScrollView {
                     scrollViewContent
                 }
-                .emptyListPlaceHolder($items, placeHolderContent: {
+                .noDataPlaceHolder(items.isEmpty, placeHolderContent: {
                     emptyMessage
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 })

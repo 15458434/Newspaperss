@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import UserMessagingPlatform
+import GoogleMobileAds
 
 final class ConsentHostingViewController<Content>: UIHostingController<Content> where Content: View {
     
@@ -18,6 +19,9 @@ final class ConsentHostingViewController<Content>: UIHostingController<Content> 
         
         // Create a UMPRequestParameters object.
         let parameters = UMPRequestParameters()
+        let debugSettings = UMPDebugSettings()
+        debugSettings.testDeviceIdentifiers = GADTestDevices().identifiers
+        parameters.debugSettings = debugSettings
         // Set tag for under age of consent. false means users are not under age
         // of consent.
         parameters.tagForUnderAgeOfConsent = false
@@ -34,7 +38,7 @@ final class ConsentHostingViewController<Content>: UIHostingController<Content> 
             
             UMPConsentForm.loadAndPresentIfRequired(from: self) {
                 [weak self] loadAndPresentError in
-                guard let self else { return }
+                guard self != nil else { return }
                 
                 if let consentError = loadAndPresentError {
                     // Consent gathering failed.
