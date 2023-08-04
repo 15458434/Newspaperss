@@ -65,7 +65,11 @@
         df.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
         df.dateFormat = @"E, d MMM yyyy HH:mm:ss Z";
         df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-        self.lastBuildDate = [df dateFromString:string];
+        NSDate *lastBuildDate = [df dateFromString:string];
+#ifdef DEBUG
+        NSLog(@"lastBuildDateString: %@, lastBuildDate: %@", string, lastBuildDate);
+#endif
+        self.lastBuildDate = lastBuildDate;
     } else if ([_currentElement isEqualToString:@"language"]) {
         self.language = string;
     } else if ([_currentElement isEqualToString:@"sy:updatePeriod"]) {

@@ -63,7 +63,11 @@
         df.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
         df.dateFormat = @"E, d MMM yyyy HH:mm:ss Z";
         df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-        _publicationDate = [df dateFromString:string];
+        NSDate *pubDate = [df dateFromString:string];
+#ifdef DEBUG
+        NSLog(@"pubDateString: %@, pubDate: %@", string, pubDate);
+#endif
+        _publicationDate = pubDate;
     } else if ([_currentElement isEqualToString:@"category"]) {
         _category = string;
     } else if ([_currentElement isEqualToString:@"guid"]) {
