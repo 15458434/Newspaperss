@@ -19,7 +19,7 @@ struct FeedListTopBannerView: UIViewControllerRepresentable {
         bannerView.adUnitID = adUnitID
         bannerView.rootViewController = bannerViewController
         bannerView.delegate = context.coordinator
-        bannerViewController.view.addSubview(bannerView)
+        bannerViewController.apply(bannerView)
         bannerViewController.delegate = context.coordinator
         
         return bannerViewController
@@ -30,6 +30,7 @@ struct FeedListTopBannerView: UIViewControllerRepresentable {
         
         bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
         bannerView.load(GADRequest())
+        bannerView.isAutoloadEnabled = true
     }
     
     func makeCoordinator() -> Coordinator {
@@ -50,6 +51,7 @@ struct FeedListTopBannerView: UIViewControllerRepresentable {
         }
         
         func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+            debugPrint("bannerView.frame: \(bannerView.frame)")
             debugPrint("❌ didFailToReceiveAdWithError: \(error)")
         }
         

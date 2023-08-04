@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3898C2042A77E0590016E111 /* BannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898C2032A77E0590016E111 /* BannerOverlay.swift */; };
+		3810EB632A782363009E0F1B /* EmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3810EB622A782363009E0F1B /* EmptyData.swift */; };
+		383A46942A7CEBF600A16FE4 /* GADAdapterStatusEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A46932A7CEBF600A16FE4 /* GADAdapterStatusEnvironmentKey.swift */; };
 		38B587E82A767D5D002F3391 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587E72A767D5D002F3391 /* WebView.swift */; };
 		38B587EC2A767F53002F3391 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587EB2A767F53002F3391 /* ArticleView.swift */; };
 		38B587FD2A76B59E002F3391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587FC2A76B59E002F3391 /* AppDelegate.swift */; };
@@ -37,10 +38,15 @@
 		38B97E882A7578700056B094 /* FeedListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E872A7578700056B094 /* FeedListModel.swift */; };
 		38B97E8C2A7584600056B094 /* FeedListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E8B2A7584600056B094 /* FeedListItemView.swift */; };
 		38B97E8E2A7589E20056B094 /* RSSFeedNetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B97E8D2A7589E20056B094 /* RSSFeedNetworkOperation.swift */; };
+		38F2E8C42A793DF200B6CBC5 /* GADTestDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E8C32A793DF200B6CBC5 /* GADTestDevices.swift */; };
+		38F2E8C72A79430700B6CBC5 /* NSLayoutConstraintBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E8C62A79430700B6CBC5 /* NSLayoutConstraintBuilder.swift */; };
+		38F2E8C92A7945A900B6CBC5 /* NSLayoutAnchorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E8C82A7945A900B6CBC5 /* NSLayoutAnchorExtension.swift */; };
+		38F2E8CB2A79472E00B6CBC5 /* UILayoutPriorityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E8CA2A79472E00B6CBC5 /* UILayoutPriorityExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3898C2032A77E0590016E111 /* BannerOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerOverlay.swift; sourceTree = "<group>"; };
+		3810EB622A782363009E0F1B /* EmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyData.swift; sourceTree = "<group>"; };
+		383A46932A7CEBF600A16FE4 /* GADAdapterStatusEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADAdapterStatusEnvironmentKey.swift; sourceTree = "<group>"; };
 		38B587E72A767D5D002F3391 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		38B587EB2A767F53002F3391 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		38B587FC2A76B59E002F3391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,10 @@
 		38B97E872A7578700056B094 /* FeedListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListModel.swift; sourceTree = "<group>"; };
 		38B97E8B2A7584600056B094 /* FeedListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListItemView.swift; sourceTree = "<group>"; };
 		38B97E8D2A7589E20056B094 /* RSSFeedNetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedNetworkOperation.swift; sourceTree = "<group>"; };
+		38F2E8C32A793DF200B6CBC5 /* GADTestDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADTestDevices.swift; sourceTree = "<group>"; };
+		38F2E8C62A79430700B6CBC5 /* NSLayoutConstraintBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintBuilder.swift; sourceTree = "<group>"; };
+		38F2E8C82A7945A900B6CBC5 /* NSLayoutAnchorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutAnchorExtension.swift; sourceTree = "<group>"; };
+		38F2E8CA2A79472E00B6CBC5 /* UILayoutPriorityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayoutPriorityExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +103,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3898C2022A77DFEB0016E111 /* Extensions */ = {
+		3898C2022A77DFEB0016E111 /* View Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3898C2032A77E0590016E111 /* BannerOverlay.swift */,
+				3810EB622A782363009E0F1B /* EmptyData.swift */,
 			);
-			path = Extensions;
+			path = "View Extensions";
 			sourceTree = "<group>";
 		};
 		38B587E52A767898002F3391 /* Article */ = {
@@ -161,8 +171,10 @@
 				38B588392A76BBC4002F3391 /* SceneDelegate.swift */,
 				38B5885C2A76D0BD002F3391 /* ViewControllers */,
 				38B97E5A2A753BB50056B094 /* Views */,
+				3898C2022A77DFEB0016E111 /* View Extensions */,
 				38B97E472A753A3B0056B094 /* Assets.xcassets */,
-				3898C2022A77DFEB0016E111 /* Extensions */,
+				38F2E8C52A7942EA00B6CBC5 /* Helpers */,
+				38F2E8C22A793DD900B6CBC5 /* Global */,
 				38B97E5D2A753D1C0056B094 /* Engines */,
 				38B97E512A753A3B0056B094 /* Info.plist */,
 				38B97E4E2A753A3B0056B094 /* Newspaperss.xcdatamodeld */,
@@ -240,6 +252,25 @@
 				38B97E872A7578700056B094 /* FeedListModel.swift */,
 			);
 			path = FeedList;
+			sourceTree = "<group>";
+		};
+		38F2E8C22A793DD900B6CBC5 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				38F2E8C32A793DF200B6CBC5 /* GADTestDevices.swift */,
+				383A46932A7CEBF600A16FE4 /* GADAdapterStatusEnvironmentKey.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		38F2E8C52A7942EA00B6CBC5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				38F2E8C62A79430700B6CBC5 /* NSLayoutConstraintBuilder.swift */,
+				38F2E8C82A7945A900B6CBC5 /* NSLayoutAnchorExtension.swift */,
+				38F2E8CA2A79472E00B6CBC5 /* UILayoutPriorityExtension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +354,10 @@
 				38B97E4D2A753A3B0056B094 /* Persistence.swift in Sources */,
 				38B97E822A7560B80056B094 /* RSSFeedEngine.m in Sources */,
 				38B588682A76E9FA002F3391 /* ArticleTopBannerView.swift in Sources */,
+				38F2E8C92A7945A900B6CBC5 /* NSLayoutAnchorExtension.swift in Sources */,
+				383A46942A7CEBF600A16FE4 /* GADAdapterStatusEnvironmentKey.swift in Sources */,
 				38B97E602A753D5C0056B094 /* URLToStringValueTransformer.swift in Sources */,
+				38F2E8C42A793DF200B6CBC5 /* GADTestDevices.swift in Sources */,
 				38B97E8E2A7589E20056B094 /* RSSFeedNetworkOperation.swift in Sources */,
 				38B97E6C2A7552540056B094 /* FeedSourceListDetailEditView.swift in Sources */,
 				38B588662A76E4F2002F3391 /* FeedSourceTopBannerView.swift in Sources */,
@@ -333,19 +367,21 @@
 				38B97E802A7560B80056B094 /* RSSFeedParserDelegate.m in Sources */,
 				38B97E5C2A753BE50056B094 /* FeedSourceListView.swift in Sources */,
 				38B588602A76D62A002F3391 /* BannerViewController.swift in Sources */,
+				38F2E8C72A79430700B6CBC5 /* NSLayoutConstraintBuilder.swift in Sources */,
 				38B97E7E2A7560B80056B094 /* XMLElement.m in Sources */,
 				38B5885E2A76D0F0002F3391 /* ConsentHostingViewController.swift in Sources */,
 				38B97E462A753A3A0056B094 /* ContentView.swift in Sources */,
 				38B97E8C2A7584600056B094 /* FeedListItemView.swift in Sources */,
+				38F2E8CB2A79472E00B6CBC5 /* UILayoutPriorityExtension.swift in Sources */,
 				38B587E82A767D5D002F3391 /* WebView.swift in Sources */,
 				38B97E7F2A7560B80056B094 /* RSSFeedImageObject.m in Sources */,
 				38B97E502A753A3B0056B094 /* Newspaperss.xcdatamodeld in Sources */,
 				38B97E622A7545EF0056B094 /* FeedListView.swift in Sources */,
 				38B588632A76D6EF002F3391 /* FeedListTopBannerView.swift in Sources */,
 				38B587FD2A76B59E002F3391 /* AppDelegate.swift in Sources */,
-				3898C2042A77E0590016E111 /* BannerOverlay.swift in Sources */,
 				38B97E812A7560B80056B094 /* RSSFeedChannelObject.m in Sources */,
 				38B97E882A7578700056B094 /* FeedListModel.swift in Sources */,
+				3810EB632A782363009E0F1B /* EmptyData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +522,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,7 +563,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

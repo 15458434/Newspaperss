@@ -10,9 +10,13 @@ import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    @objc dynamic var adMobState: GADAdapterStatus?
     
     func startGoogleAds() {
-        GADMobileAds.sharedInstance().start()
+        GADMobileAds.sharedInstance().start { status in
+            let adapterStatusesByClassName = status.adapterStatusesByClassName
+            self.adMobState = adapterStatusesByClassName["GADMobileAds"]
+        }
         let iPhone11ProMarkID = "e1e7c0fe434a85ce976f84098f5ce9d2"
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID, iPhone11ProMarkID ]
     }

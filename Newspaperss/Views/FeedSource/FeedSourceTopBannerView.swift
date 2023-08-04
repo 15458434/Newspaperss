@@ -19,7 +19,7 @@ struct FeedSourceTopBannerView: UIViewControllerRepresentable {
         bannerView.adUnitID = adUnitID
         bannerView.rootViewController = bannerViewController
         bannerView.delegate = context.coordinator
-        bannerViewController.view.addSubview(bannerView)
+        bannerViewController.apply(bannerView)
         bannerViewController.delegate = context.coordinator
         
         return bannerViewController
