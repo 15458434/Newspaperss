@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3810EB632A782363009E0F1B /* EmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3810EB622A782363009E0F1B /* EmptyData.swift */; };
 		383A46942A7CEBF600A16FE4 /* GADAdapterStatusEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A46932A7CEBF600A16FE4 /* GADAdapterStatusEnvironmentKey.swift */; };
-		3898C2042A77E0590016E111 /* BannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898C2032A77E0590016E111 /* BannerOverlay.swift */; };
 		38B587E82A767D5D002F3391 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587E72A767D5D002F3391 /* WebView.swift */; };
 		38B587EC2A767F53002F3391 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587EB2A767F53002F3391 /* ArticleView.swift */; };
 		38B587FD2A76B59E002F3391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B587FC2A76B59E002F3391 /* AppDelegate.swift */; };
@@ -48,7 +47,6 @@
 /* Begin PBXFileReference section */
 		3810EB622A782363009E0F1B /* EmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyData.swift; sourceTree = "<group>"; };
 		383A46932A7CEBF600A16FE4 /* GADAdapterStatusEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADAdapterStatusEnvironmentKey.swift; sourceTree = "<group>"; };
-		3898C2032A77E0590016E111 /* BannerOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerOverlay.swift; sourceTree = "<group>"; };
 		38B587E72A767D5D002F3391 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		38B587EB2A767F53002F3391 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		38B587FC2A76B59E002F3391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 		3898C2022A77DFEB0016E111 /* View Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3898C2032A77E0590016E111 /* BannerOverlay.swift */,
 				3810EB622A782363009E0F1B /* EmptyData.swift */,
 			);
 			path = "View Extensions";
@@ -382,7 +379,6 @@
 				38B97E622A7545EF0056B094 /* FeedListView.swift in Sources */,
 				38B588632A76D6EF002F3391 /* FeedListTopBannerView.swift in Sources */,
 				38B587FD2A76B59E002F3391 /* AppDelegate.swift in Sources */,
-				3898C2042A77E0590016E111 /* BannerOverlay.swift in Sources */,
 				38B97E812A7560B80056B094 /* RSSFeedChannelObject.m in Sources */,
 				38B97E882A7578700056B094 /* FeedListModel.swift in Sources */,
 				3810EB632A782363009E0F1B /* EmptyData.swift in Sources */,
@@ -526,7 +522,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,7 +563,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

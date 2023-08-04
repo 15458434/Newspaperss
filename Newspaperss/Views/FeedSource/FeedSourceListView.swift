@@ -17,72 +17,42 @@ struct FeedSourceListView: View {
     
     var body: some View {
         NavigationView {
-            if #available(iOS 15.0, *) {
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            FeedSourceListDetailEditView(feedItem: item)
-                        } label: {
-                            if item.url?.absoluteString != nil {
-                                Text(item.url!.absoluteString!)
-                            } else {
-                                Text("Invalid RSSFeed URL")
-                            }
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
-                }
-                .noDataPlaceHolder(items.isEmpty, placeHolderContent: {
-                    ScrollView {
-                        emptyMessage
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    }
-                })
-                .safeAreaInset(edge: .top, content: {
-                    FeedSourceTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
-                        .background(Color("scrollViewBackground"))
-                })
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
+            List {
+                ForEach(items) { item in
+                    NavigationLink {
+                        FeedSourceListDetailEditView(feedItem: item)
+                    } label: {
+                        if item.url?.absoluteString != nil {
+                            Text(item.url!.absoluteString!)
+                        } else {
+                            Text("Invalid RSSFeed URL")
                         }
                     }
                 }
-                .navigationTitle("Edit Feed")
-                .background(Color("scrollViewBackground"))
-            } else {
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            FeedSourceListDetailEditView(feedItem: item)
-                        } label: {
-                            if item.url?.absoluteString != nil {
-                                Text(item.url!.absoluteString!)
-                            } else {
-                                Text("Invalid RSSFeed URL")
-                            }
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
-                }
-                .padding(.top, 80)
-                .overlay(FeedSourceTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing), alignment: .top)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                    }
-                }
-                .navigationTitle("Edit Feed")
+                .onDelete(perform: deleteItems)
             }
+            .noDataPlaceHolder(items.isEmpty, placeHolderContent: {
+                ScrollView {
+                    emptyMessage
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            })
+            .safeAreaInset(edge: .top, content: {
+                FeedSourceTopBannerView().frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
+                    .background(Color("scrollViewBackground"))
+            })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+                ToolbarItem {
+                    Button(action: addItem) {
+                        Label("Add Item", systemImage: "plus")
+                    }
+                }
+            }
+            .navigationTitle("Edit Feed")
+            .background(Color("scrollViewBackground"))
         }
     }
     

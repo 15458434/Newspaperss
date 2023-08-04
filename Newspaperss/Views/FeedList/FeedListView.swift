@@ -18,42 +18,25 @@ struct FeedListView: View {
     
     var body: some View {
         NavigationView {
-            if #available(iOS 15.0, *) {
+            ScrollView {
+                scrollViewContent
+            }
+            .noDataPlaceHolder(items.isEmpty, placeHolderContent: {
                 ScrollView {
-                    scrollViewContent
+                    emptyMessage
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                .noDataPlaceHolder(items.isEmpty, placeHolderContent: {
-                    ScrollView {
-                        emptyMessage
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    }
-                })
-                .navigationTitle("News Feed")
-                .background(Color("scrollViewBackground"))
-                .safeAreaInset(edge: .top, spacing: 0) {
-                    adBanner
-                }
-                .onReceive(feedListModel.$feedItemObjects, perform: { newValue in
-                    items = newValue
-                })
-                .onAppear {
-                    feedListModel.fetch()
-                }
-            } else {
-                ScrollView {
-                    Spacer(minLength: adBannerHeight)
-                    scrollViewContent
-                }
-                .background(Color("scrollViewBackground"))
-                .navigationTitle("News Feed")
-                .overlay(FeedListTopBannerView()
-                    .frame(height: 60).frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottomTrailing)
-                    .readHeight(onChange: { height in
-                        adBannerHeight = height
-                    }), alignment: .top)
-                .onAppear {
-                    feedListModel.fetch()
-                }
+            })
+            .navigationTitle("News Feed")
+            .background(Color("scrollViewBackground"))
+            .safeAreaInset(edge: .top, spacing: 0) {
+                adBanner
+            }
+            .onReceive(feedListModel.$feedItemObjects, perform: { newValue in
+                items = newValue
+            })
+            .onAppear {
+                feedListModel.fetch()
             }
         }
     }
@@ -99,5 +82,6 @@ struct FeedListView_Previews: PreviewProvider {
     
     static var previews: some View {
         FeedListView(feedListModel: FeedListModel(managedObjectContext: persistence.container.newBackgroundContext()))
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }
 }
