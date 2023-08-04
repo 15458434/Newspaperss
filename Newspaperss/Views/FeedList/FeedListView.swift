@@ -12,8 +12,6 @@ struct FeedListView: View {
     
     @State private var isPresentingArticleView = false
     
-    @available(iOS, introduced: 13.0, obsoleted: 15.0, message: "iOS 15 introduces func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment = .center, spacing: CGFloat? = nil, @ViewBuilder content: () -> V) -> some View where V : View")
-    @State var adBannerHeight: CGFloat = 0
     @State private var items = [RSSFeedItemObject]()
     
     var body: some View {
@@ -82,6 +80,5 @@ struct FeedListView_Previews: PreviewProvider {
     
     static var previews: some View {
         FeedListView(feedListModel: FeedListModel(managedObjectContext: persistence.container.newBackgroundContext()))
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }
 }

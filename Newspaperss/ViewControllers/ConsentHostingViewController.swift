@@ -33,7 +33,8 @@ final class ConsentHostingViewController<Content>: UIHostingController<Content> 
             
             if let consentError = requestConsentError {
                 // Consent gathering failed.
-                return print("Error: \(consentError.localizedDescription)")
+                debugPrint("Error: \(consentError.localizedDescription)")
+                return
             }
             
             UMPConsentForm.loadAndPresentIfRequired(from: self) {
@@ -42,7 +43,8 @@ final class ConsentHostingViewController<Content>: UIHostingController<Content> 
                 
                 if let consentError = loadAndPresentError {
                     // Consent gathering failed.
-                    return print("Error: \(consentError.localizedDescription)")
+                    debugPrint("Error: \(consentError.localizedDescription)")
+                    return
                 }
                 
                 // Consent has been gathered.
