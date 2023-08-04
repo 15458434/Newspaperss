@@ -26,6 +26,7 @@ struct FeedSourceListView: View {
                             Text(item.url!.absoluteString!)
                         } else {
                             Text("Invalid RSSFeed URL")
+                                .foregroundColor(Color.red)
                         }
                     }
                 }
@@ -72,7 +73,6 @@ struct FeedSourceListView: View {
     private func addItem() {
         withAnimation {
             let newItem = RSSFeedItem(context: viewContext)
-            newItem.url = NSURL(string: "https://www.nu.nl/rss/Algemeen")
             newItem.sortValue = Double(items.count)
 
             do {
