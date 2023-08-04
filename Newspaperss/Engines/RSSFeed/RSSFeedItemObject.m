@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> *currentElementAttributeDictionary;
 @property (nonatomic, strong) NSString *currentElement;
+@property (nonatomic, strong) NSString *previousElement;
 
 @end
 
@@ -42,6 +43,7 @@
         _content = new;
     }
     _currentElementAttributeDictionary = nil;
+    _previousElement = _currentElement;
     _currentElement = nil;
 }
 
@@ -51,7 +53,13 @@
 //    NSLog(@"foundCharacters for element: %@", _currentElement);
 //#endif
     if ([_currentElement isEqualToString:@"title"]) {
-        _title = string;
+        NSLog(@"title: %@", string);
+        if ([_previousElement isEqualToString:@"title"]) {
+            _title = [_title stringByAppendingString:string];
+        } else {
+            _title = string;
+        }
+        
     } else if ([_currentElement isEqualToString:@"link"]) {
         _link = [NSURL URLWithString:string];
     } else if ([_currentElement isEqualToString:@"comments"]) {
