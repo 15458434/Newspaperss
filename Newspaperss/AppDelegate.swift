@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let adapterStatusesByClassName = status.adapterStatusesByClassName
             self.adMobState = adapterStatusesByClassName["GADMobileAds"]
         }
-        let iPhone11ProMarkID = "e1e7c0fe434a85ce976f84098f5ce9d2"
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID, iPhone11ProMarkID ]
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = GADTestDevices().identifiers
     }
     
     // MARK: UIApplicationDelegate
