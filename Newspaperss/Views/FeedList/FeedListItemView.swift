@@ -20,6 +20,11 @@ struct FeedListItemView: View {
                     .font(.subheadline)
                     .foregroundColor(Color("secondaryLabel"))
                     .multilineTextAlignment(.leading)
+                HStack {
+                    Spacer()
+                    Text(item.publicationDate, style: .date)
+                    Text(item.publicationDate, style: .time)
+                }
             })
             Spacer()
         }
