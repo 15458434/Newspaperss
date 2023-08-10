@@ -19,6 +19,9 @@ struct FeedListView: View {
             ScrollView {
                 scrollViewContent
             }
+            .refreshable {
+                feedListModel.fetch()
+            }
             .noDataPlaceHolder(items.isEmpty, placeHolderContent: {
                 ScrollView {
                     emptyMessage
