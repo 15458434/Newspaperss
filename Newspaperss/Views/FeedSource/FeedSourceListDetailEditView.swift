@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shared
 
 struct FeedSourceListDetailEditView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -34,7 +35,12 @@ struct FeedSourceListDetailEditView: View {
                     }
                 }
                 .onChange(of: urlString) { newValue in
-                    feedItem.url = NSURL(string: newValue)
+                    do {
+                        let url = try transform(webUrlString: newValue)
+                        feedItem.url = url as NSURL
+                    } catch {
+                        feedItem.url = nil
+                    }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
