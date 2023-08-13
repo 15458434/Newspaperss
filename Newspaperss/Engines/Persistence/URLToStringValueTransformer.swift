@@ -25,7 +25,7 @@ final class URLToStringValueTransformer: ValueTransformer {
             return nil
         }
         
-        return try? convert(webUrlString: value)
+        return try? transform(webUrlString: value)
     }
     
     override func reverseTransformedValue(_ value: Any?) -> Any? {
