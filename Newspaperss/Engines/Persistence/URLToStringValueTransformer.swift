@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Shared
 
 final class URLToStringValueTransformer: ValueTransformer {
     
@@ -24,7 +25,7 @@ final class URLToStringValueTransformer: ValueTransformer {
             return nil
         }
         
-        return NSURL(string: value)
+        return try? convert(webUrlString: value)
     }
     
     override func reverseTransformedValue(_ value: Any?) -> Any? {
